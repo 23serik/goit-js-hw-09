@@ -15,13 +15,13 @@ function onFormSubmit(event) {
       .then(result => {
         console.log('result', result);
         Notiflix.Notify.success(
-          `✅ Fulfilled promise ${position} in ${delay}ms`
+          `✅ Fulfilled promise ${position} in ${result.delay}ms`
         );
       })
       .catch(error => {
         console.log('error', error);
         Notiflix.Notify.failure(
-          `❌ Rejected promise ${position} in ${delay}ms`
+          `❌ Rejected promise ${position} in ${error.delay}ms`
         );
       });
     delay += step;
